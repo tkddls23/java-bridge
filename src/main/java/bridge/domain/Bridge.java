@@ -1,8 +1,5 @@
 package bridge.domain;
 
-import bridge.BridgeMaker;
-import bridge.BridgeRandomNumberGenerator;
-import bridge.view.InputView;
 
 import java.util.List;
 
@@ -15,6 +12,10 @@ public class Bridge {
 
     public Bridge(List<String> bridge) {
         this.bridge = bridge;
+    }
+
+    public int getSize() {
+        return bridge.size();
     }
 
     public String judgeUserMove(int location,String userMoving) {
