@@ -12,7 +12,6 @@ import static bridge.constant.BridgeConstant.*;
  */
 public class BridgeGame {
 
-    private int userLocation;
     private Bridge bridge;
     private Boolean moveStatus;
     private List<String> userMovings;
@@ -47,7 +46,7 @@ public class BridgeGame {
      * 이동을 위해 필요한 메서드의 반환 타입(return type), 인자(parameter)는 자유롭게 추가하거나 변경할 수 있다.
      */
     public void move(String userMoving) {
-        String moveResult = bridge.judgeUserMove(userLocation, userMoving);
+        String moveResult = bridge.judgeUserMove(updateUserLocation(userMoving), userMoving);
         updateUserMove(moveResult,userMoving);
         if (moveResult.equals(BRIDGE_RESULT_WRONG)) {
             moveStatus = false;
@@ -58,7 +57,11 @@ public class BridgeGame {
      * <p>
      * 재시작을 위해 필요한 메서드의 반환 타입(return type), 인자(parameter)는 자유롭게 추가하거나 변경할 수 있다.
      */
-    public void retry() {
+    public boolean retry(String gameCommand) {
+        if (gameCommand.equals(BRIDGE_RETRY_COMMAND)) {
+            return true;
+        }
+        return false;
     }
     private int updateUserLocation(String userMoving) {
         userMovings.add(userMoving);
