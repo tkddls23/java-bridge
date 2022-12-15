@@ -1,5 +1,6 @@
 package bridge.view;
 
+import bridge.validation.InputViewValidation;
 import camp.nextstep.edu.missionutils.Console;
 
 import static bridge.constant.MessageConstant.MESSAGE_INPUT_BRIDGE_SIZE;
@@ -15,6 +16,7 @@ public class InputView {
     public int readBridgeSize() {
         System.out.println(MESSAGE_INPUT_BRIDGE_SIZE);
         String input = Console.readLine();
+        InputViewValidation.checkInputValid(input);
         int bridgeSize = Integer.parseInt(input);
         return bridgeSize;
     }
