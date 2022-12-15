@@ -4,6 +4,7 @@ import bridge.validation.InputViewValidation;
 import camp.nextstep.edu.missionutils.Console;
 
 import static bridge.constant.MessageConstant.MESSAGE_INPUT_BRIDGE_SIZE;
+import static bridge.constant.MessageConstant.MESSAGE_INPUT_BRIDGE_STEP;
 
 /**
  * 사용자로부터 입력을 받는 역할을 한다.
@@ -28,7 +29,9 @@ public class InputView {
      * 사용자가 이동할 칸을 입력받는다.
      */
     public String readMoving() {
-        return null;
+        System.out.println(MESSAGE_INPUT_BRIDGE_STEP);
+        String bridgeMoving = Console.readLine();
+        return bridgeMoving;
     }
 
     /**
