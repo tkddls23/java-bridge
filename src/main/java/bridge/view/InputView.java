@@ -40,6 +40,7 @@ public class InputView {
     public String readGameCommand() {
         System.out.println(MESSAGE_INPUT_EXIT);
         String gameCommand = Console.readLine();
+        InputViewValidation.checkGameCommandValid(gameCommand);
         return gameCommand;
     }
 }

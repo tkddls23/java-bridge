@@ -2,8 +2,7 @@ package bridge.validation;
 
 import java.util.Objects;
 
-import static bridge.constant.BridgeConstant.BRIDGE_DOWN_COMMAND;
-import static bridge.constant.BridgeConstant.BRIDGE_UP_COMMAND;
+import static bridge.constant.BridgeConstant.*;
 import static bridge.constant.ErrorConstant.*;
 
 public class InputViewValidation {
@@ -22,6 +21,12 @@ public class InputViewValidation {
     public static void checkBridgeMovingValid(String bridgeMoving) {
         if (!bridgeMoving.equals(BRIDGE_UP_COMMAND) && !bridgeMoving.equals(BRIDGE_DOWN_COMMAND)) {
             throw new IllegalArgumentException(ERROR_NOT_VALID_MOVING_COMMAND);
+        }
+    }
+
+    public static void checkGameCommandValid(String gameCommand) {
+        if (!gameCommand.equals(BRIDGE_RETRY_COMMAND) && !gameCommand.equals(BRIDGE_QUIT_COMMAND)) {
+            throw new IllegalArgumentException(ERROR_NOT_VALID_GAME_COMMAND);
         }
     }
 
