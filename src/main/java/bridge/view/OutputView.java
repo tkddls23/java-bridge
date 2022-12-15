@@ -27,6 +27,7 @@ public class OutputView {
 
         System.out.printf(MESSAGE_OUTPUT_BRACKET, String.join(MESSAGE_OUTPUT_WALL, bridgeGame.getLowerResults()));
         printBlank();
+        printBlank();
     }
 
     /**
@@ -41,6 +42,7 @@ public class OutputView {
         printBlank();
 
         System.out.printf(MESSAGE_OUTPUT_BRACKET, String.join(MESSAGE_OUTPUT_WALL, bridgeGame.getLowerResults()));
+        printBlank();
         printBlank();
         printSuccessOrNot(gameResult, bridgeGame.getTryCount());
     }
