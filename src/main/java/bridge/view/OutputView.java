@@ -1,6 +1,6 @@
 package bridge.view;
 
-import bridge.BridgeGame;
+import bridge.domain.BridgeGame;
 
 import static bridge.constant.MessageConstant.*;
 
