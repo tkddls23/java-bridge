@@ -29,6 +29,18 @@ public class BridgeGame {
         this.tryCount ++;
     }
 
+    public int getTryCount() {
+        return tryCount;
+    }
+
+    public List<String> getUpperResults() {
+        return upperResults;
+    }
+
+    public List<String> getLowerResults() {
+        return lowerResults;
+    }
+
     /**
      * 사용자가 칸을 이동할 때 사용하는 메서드
      * <p>
