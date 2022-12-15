@@ -2,14 +2,19 @@ package bridge.validation;
 
 import java.util.Objects;
 
-import static bridge.constant.ErrorConstant.ERROR_BLANK_INPUT;
-import static bridge.constant.ErrorConstant.ERROR_NON_INTEGER;
+import static bridge.constant.ErrorConstant.*;
 
 public class InputViewValidation {
 
     public static void checkInputValid(String input) {
         checkInputBlank(input);
         checkInputDigit(input);
+    }
+
+    public static void checkBridgeSizeRange(int bridgeSize) {
+        if (bridgeSize < 3 || bridgeSize > 20) {
+            throw new IllegalArgumentException(ERROR_OUT_OF_RANGE);
+        }
     }
 
     private static void checkInputBlank(String input) {
