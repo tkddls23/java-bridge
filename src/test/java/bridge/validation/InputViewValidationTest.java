@@ -35,4 +35,13 @@ class InputViewValidationTest {
                 .isThrownBy(() -> InputViewValidation.checkBridgeSizeRange(bridgeSize))
                 .withMessageStartingWith(ERROR_OUT_OF_RANGE);
     }
+
+    @DisplayName("예외 처리 : 입력 받은 이동할 칸이 올바른지 검증")
+    @ParameterizedTest
+    @ValueSource(strings = {" ","","1","UD", "u"})
+    void checkBridgeMovingValid(String bridgeMoving) {
+        assertThatIllegalArgumentException()
+                .isThrownBy(() -> InputViewValidation.checkBridgeMovingValid(bridgeMoving))
+                .withMessageStartingWith(ERROR_NOT_VALID_MOVING_COMMAND);
+    }
 }
