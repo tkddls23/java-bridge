@@ -31,6 +31,7 @@ public class InputView {
     public String readMoving() {
         System.out.println(MESSAGE_INPUT_BRIDGE_STEP);
         String bridgeMoving = Console.readLine();
+        InputViewValidation.checkBridgeMovingValid(bridgeMoving);
         return bridgeMoving;
     }
 
