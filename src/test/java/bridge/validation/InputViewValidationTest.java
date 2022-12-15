@@ -5,8 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import static bridge.constant.ErrorConstant.ERROR_BLANK_INPUT;
-import static bridge.constant.ErrorConstant.ERROR_NON_INTEGER;
+import static bridge.constant.ErrorConstant.*;
 import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
 
 class InputViewValidationTest {
@@ -26,5 +25,14 @@ class InputViewValidationTest {
         assertThatIllegalArgumentException()
                 .isThrownBy(() -> InputViewValidation.checkInputValid(""))
                 .withMessageStartingWith(ERROR_BLANK_INPUT);
+    }
+
+    @DisplayName("예외 처리 : 다리 길이가 지정 범위에 있는지 검증")
+    @ParameterizedTest
+    @ValueSource(ints = {0,1,2,21})
+    void checkNotValidDigitInputValidation(int bridgeSize) {
+        assertThatIllegalArgumentException()
+                .isThrownBy(() -> InputViewValidation.checkBridgeSizeRange(bridgeSize))
+                .withMessageStartingWith(ERROR_OUT_OF_RANGE);
     }
 }
